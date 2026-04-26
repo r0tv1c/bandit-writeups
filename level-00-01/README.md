@@ -1,12 +1,12 @@
-# Bandit Level 0 → 1
+# 🧪 Bandit Level 0 → 1
 
-## Objetivo
+## 🎯 Objetivo
 
 Acceder al servidor remoto mediante SSH y obtener la contraseña del siguiente nivel desde un archivo disponible.
 
 ---
 
-## Enumeración
+## 🔍 Enumeración
 
 Conexión al servidor:
 
@@ -23,7 +23,13 @@ readme
 
 ---
 
-## Ejecución
+## 🧩 Problema
+
+Identificar el archivo que contiene la contraseña del siguiente nivel.
+
+---
+
+## ⚙️ Ejecución
 
 ```bash
 bandit0@bandit:~$ cat readme
@@ -31,42 +37,55 @@ bandit0@bandit:~$ cat readme
 
 ---
 
-## Resultado
+## 🔑 Resultado
 
 Se obtiene la contraseña del siguiente nivel
 🔒 *Contraseña omitida por cumplimiento de reglas de OverTheWire*
 
 ---
 
-## Explicación técnica
+## 🧠 Explicación técnica
 
-* `ssh` permite conexión remota cifrada
-* `-p 2220` especifica puerto
-* `ls` lista archivos
-* `cat` muestra contenido
+* `ssh` (Secure Shell) establece una conexión remota cifrada entre cliente y servidor
+* `-p 2220` especifica el puerto del servicio
+* `ls` lista los archivos en el directorio actual
+* `cat` muestra el contenido de un archivo en la terminal
 
 ---
 
-## Nota de atacante
+## 🔥 Nota de atacante
 
-El acceso inicial permite:
+El acceso inicial a un sistema permite:
 
-* Reconocimiento del sistema
+* Enumeración básica del entorno
 * Identificación de archivos sensibles
-* Evaluación del entorno
+* Evaluación del contexto de usuario
+
+Este paso corresponde a una fase inicial de **post-explotación**.
 
 ---
 
-## Lección clave
+## 🛠 Troubleshooting
 
-La conexión remota segura es fundamental en:
+| Problema          | Causa                    | Solución                   |
+| ----------------- | ------------------------ | -------------------------- |
+| No conecta        | Puerto incorrecto        | Usar `-p 2220`             |
+| Acceso denegado   | Credenciales incorrectas | Verificar usuario/password |
+| SSH no disponible | Cliente no instalado     | Instalar OpenSSH           |
+
+---
+
+## 📚 Lección clave
+
+El acceso remoto seguro es fundamental en:
 
 * Pentesting
 * Administración de sistemas
-* Entornos Linux
+* Operación en entornos Linux
 
 ---
 
-## Referencias
+## 🔗 Referencias
 
 * OverTheWire Bandit
+* Manual de `ssh`
